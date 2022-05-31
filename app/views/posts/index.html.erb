@@ -6,8 +6,10 @@
   <div class="index__contents">
   <% @posts.each do |post|%>
   <%= post.title %>
+  <%= image_tag post.image %>
   <%= post.content %>
   <%= post.created_at %>
+  <%= post.province.name%>
   <%= post.user.nickname%>
   <% end %>
 
