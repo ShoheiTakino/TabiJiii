@@ -1,0 +1,17 @@
+.header__background {
+  background-color: lightcyan;
+  height: 100vh;
+  width: 100vw;
+}
+
+.index__contents {
+  background-color: lightpink;
+  height: 100vh;
+  width: 100vw;
+}
+
+.index__under {
+  background-color: lightgreen;
+  height: 100vh;
+  width: 100vw;
+}
