@@ -1,3 +1,14 @@
 <%= render "shared/header" %>
- <%= @post.user.nickname %>
+ <%- @post.title %><br>
+ <%= @post.user.nickname %><br>
+ <%= image_tag @post.image %><br>
+ <%= @post.content%><br>
+ <%= @post.province.name %><br>
+ <%#コメント一覧表示%>
+ <% if current_user.id == @post.user.id %>
+ <%= link_to "edit", edit_post_path(@post) , method: :get %>
+ <%= link_to "delete", post_path(@post), method: :delete %>
+ <% else %>
+ <%#コメントする機能を実装する。%>
+ <% end %>
 <%= render "shared/footer" %>

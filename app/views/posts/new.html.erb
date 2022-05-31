@@ -6,8 +6,8 @@
 <%= f.text_area :title, placeholder:"Title", maxlength:"40" %>
 <%= f.text_area :content, placeholder:"" ,rows:"7" ,maxlength:"1000" %>
 <div class="weight-bold-text">
-          発送元の地域
-          <span class="indispensable">必須</span>
+        
+          <span class="indispensable">今回の旅行先</span>
         </div>
         <%= f.collection_select(:province_id, Province.all, :id, :name, {}, {class:"select-box", id:"item-prefecture"}) %>
         <div class="sell-btn-contents">
