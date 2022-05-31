@@ -1,6 +1,7 @@
 <%= render "shared/header" %>
 <div class="main">
   <div class="header__background">
+  <div>ここにイメージを5枚ぐらいスライドで表示できるようにするもしくは、映像を入れる</div>
   </div>
   <div class="index__contents">
   <% @posts.each do |post|%>
@@ -9,9 +10,18 @@
   <%= post.created_at %>
   <%= post.user.nickname%>
   <% end %>
+
+  <% if user_signed_in? %>
   <%= link_to new_post_path do %>
   <div class="post__image">投稿する</div>
   <% end %>
+  <% else %>
+  <%= link_to new_user_session_path do %>
+  <div class="post__image">投稿する</div>
+  <% end %>
+  <% end %>
+
+
   </div>
   <div class="index__under">
   </div>
