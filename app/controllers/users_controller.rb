@@ -6,10 +6,12 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.all
-    if current_user.id == @user
-    else
-      redirect_to root_path
-    end
+    user = User.new
+    current_user.id == @user
+    #if current_user.id == @user
+    #else
+      #redirect_to root_path
+    #end
   end
 
   def update
@@ -22,12 +24,10 @@ class UsersController < ApplicationController
     end
   end
 
-  def delete
-  end
 
 
   private 
   def user_param
-    params.require(:user).permit(:nickname, :email, :password).merge(current_user.id)
+    params.require(:user).permit(:nickname, :email, :password).merge(:user, current_user.id)
   end
 end
