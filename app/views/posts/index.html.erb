@@ -3,6 +3,15 @@
   <div class="header__background">
   </div>
   <div class="index__contents">
+  <% @posts.each do |post|%>
+  <%= post.title %>
+  <%= post.content %>
+  <%= post.created_at %>
+  <%= post.user.nickname%>
+  <% end %>
+  <%= link_to new_post_path do %>
+  <div class="post__image">投稿する</div>
+  <% end %>
   </div>
   <div class="index__under">
   </div>
