@@ -1,8 +1,10 @@
 <%= render "shared/header" %>
 <div class="my__page__main">マイページ</div>
-    <%# if current_user.id == @user %>
-      <%= link_to "#{current_user.nickname}edit",  edit_user_path(@user), method: :get, class: "item-red-btn" %>
+    <%# if current_user.id == @user_id %>
+      <%= link_to "#{current_user.nickname}edit",  user_registration_path, method: :patch, class: "item-red-btn" %>
         <p class="or-text">or</p>
       <%= link_to "Delete Account",  user_registration_path, method: :delete, class:"item-destroy" %>
+      <%#else%>
+      <div>本人以外</div>
     <%# end %>
 <%= render "shared/footer" %>

@@ -27,7 +27,7 @@ class UsersController < ApplicationController
 
 
   private 
-  def user_param
+  def user_params
     params.require(:user).permit(:nickname, :email, :password).merge(:user, current_user.id)
   end
 end
