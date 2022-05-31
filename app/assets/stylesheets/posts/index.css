@@ -10,6 +10,25 @@
   width: 100vw;
 }
 
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.image {
+  padding: 20px 30px;
+  
+}
+
+.item-img {
+  width: 33vh;
+  height: 33vh;
+  border-radius: 10px;
+}
+
 .index__under {
   background-color: lightgreen;
   height: 100vh;
