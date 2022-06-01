@@ -1,3 +1,26 @@
 <%= render "shared/header" %>
-
+<div class="show__main">
+<div class="show__contents__area">
+<div class="show__title">
+ <%= @post.title %><br>
+ </div>
+ 
+ <div class="show__image">
+ <%= image_tag @post.image , class:"show__item-img" %><br>
+ </div>
+ <div class="show__nickname">
+ <%= @post.user.nickname %><br>
+ </div>
+ <%= @post.content%><br>
+ <%= @post.province.name %><br>
+ <%#コメント一覧表示%>
+ <% if current_user.id == @post.user.id %>
+ <%= link_to "edit", edit_post_path(@post) , method: :get %>
+ <%= link_to "delete", post_path(@post), method: :delete %>
+ <% else %>
+ <%#コメントする機能を実装する。%>
+ <% end %>
+ <%#=コメント機能%>
+ </div>
+ </div>
 <%= render "shared/footer" %>
