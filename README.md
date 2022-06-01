@@ -59,7 +59,7 @@ https://docs.google.com/spreadsheets/d/1mN7qLIq4Z2e9uTgh_gjQW86uiYzVQig_Yw2UFoj8
 - has_many :favorits
 - belongs_to :user
 
-## Commentsテーブル
+## Chatsテーブル
 
 | Column     | Type       | Options                        |
 | ---------- | ---------- | ------------------------------ |
