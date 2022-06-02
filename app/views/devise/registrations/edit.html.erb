@@ -48,6 +48,10 @@
     <%= f.text_area :profile, class:"input-default", placeholder:"ex) My name iS Toshichan!! let's enjoy travel", maxlength:"1000" %>
   </div>
 
+    <div class="icon__area">
+   <%= f.file_field :image, id:"item-image" %>
+  </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>

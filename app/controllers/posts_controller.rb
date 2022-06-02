@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   
   
   def index
-    @user = User.limit(10)
+    @user = User.all
     @posts = Post.all
   end
 
