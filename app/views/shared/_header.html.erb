@@ -9,6 +9,7 @@
     </ul>
     <ul class='lists-right'>
       <% if user_signed_in? %>
+        <li><%#= image_tag @user.icon %></li>
         <li><%= link_to current_user.nickname, user_path(@user), class: "user-nickname" %></li> 
         <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "logout" %></li> 
       <% else %>

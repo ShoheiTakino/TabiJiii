@@ -14,13 +14,18 @@
  <%= @post.content%><br>
  <%= @post.province.name %><br>
  <%#コメント一覧表示%>
- <% if current_user.id == @post.user.id %>
+ <% if current_user.id == @post.user.id && user_signed_in? %>
  <%= link_to "edit", edit_post_path(@post) , method: :get %>
  <%= link_to "delete", post_path(@post), method: :delete %>
+  <%= render 'chats/chat_post' %>
+  <%= link_to new_post_chat_path(@post.id), class:"post_button" do %>
+  <div claas="new__comment__path">コメントする</div>
+  <% end %>
  <% else %>
- <%#コメントする機能を実装する。%>
+  <%#= render 'chats/chat_post' %>
  <% end %>
  <%#=コメント機能%>
+   <%#= render 'chats/chat_index' %>
  </div>
  </div>
 <%= render "shared/footer" %>
