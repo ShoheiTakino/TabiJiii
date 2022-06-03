@@ -10,4 +10,6 @@
 .show__item-img {
   border-radius: 3px;
   padding: 50px 0;
+  height: 500px;
+  width: 600px;
 }

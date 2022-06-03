@@ -1,9 +1,10 @@
 <%= render "shared/header" %>
 <div class="my__page__main">マイページ</div>
-<%#= @user.nickname %>
-<%# @user.each do |user| %>
-<%#= user.post.title%>
-<%# end %>
+<div class="my__post__area">
+<% @post.each do |post| %>
+<%= post.title %>
+<% end %>
+</div>
     <%# if current_user.id == @user_id %>
       <%= link_to "#{current_user.nickname}情報変更",  user_registration_path, method: :patch, class: "item-red-btn" %>
         <p class="or-text">or</p>

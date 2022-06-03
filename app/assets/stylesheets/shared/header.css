@@ -46,6 +46,23 @@
   align-items: flex-end;
 }
 
+.icon_image__area {
+  padding: 0 10px 0 0;
+}
+
+.icon_image {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  object-fit: cover;
+  transition-duration: 0.7s;
+}
+
+.icon_image:hover {
+  border: solid 1px red;
+  opacity: 0.8;
+  transition-duration: 0.7s;
+}
 
 .user-nickname {
   text-decoration: none;

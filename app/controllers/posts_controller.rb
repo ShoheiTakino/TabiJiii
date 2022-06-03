@@ -2,7 +2,7 @@ class PostsController < ApplicationController
   
   
   def index
-    @user = User.all.order("created_at DESC")
+    @user = User.all
     @posts = Post.all
   end
 
@@ -22,15 +22,25 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @user = Post.find(params[:id])
+    @user = @post
+    @chats = Chat.all
+    @chat = Chat.new
   end
   
   def edit
     @post = Post.find(params[:id])
-    @user = Post.find(params[:id])
+    @user = @post
   end
 
   def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      @user = Post.all
+      @chat = Chat.new
+      render :show
+    else
+      render :edit
+    end
   end
 
   def destroy
@@ -44,6 +54,10 @@ class PostsController < ApplicationController
   private
   def post_params
     params.require(:post).permit(:title, :image, :content, :province_id).merge(user_id: current_user.id)
+  end
+
+  def chat_params
+    params.require(:chat).permit(:comment).merge(post_id: current_user.id)
   end
 
 

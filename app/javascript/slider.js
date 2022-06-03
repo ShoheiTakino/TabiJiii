@@ -1,5 +1,6 @@
 //const $ = jQuery.noConflict();
 
-//$(function(){
-  //$(".sliders").slick();
-//});
+$(function(){
+  $(".sliders").slick();
+  
+});
