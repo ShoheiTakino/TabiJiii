@@ -2,6 +2,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.all
+    @post = Post.all
   end
 
   def edit
